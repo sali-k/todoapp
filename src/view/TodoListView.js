@@ -5,11 +5,11 @@ export class TodoListView {
   createElement(todoItems, { onUpdateTodo, onDeleteTodo }) {
     const todoListElement = element`<ul />`;
     // 各TodoItemモデルに対応したHTML要素を作成し、リスト要素へ追加する
-    todoItems.forEach((todoItem) => {
+    todoItems.forEach(todoItem => {
       const todoItemView = new TodoItemView();
       const todoItemElement = todoItemView.createElement(todoItem, {
         onDeleteTodo,
-        onUpdateTodo,
+        onUpdateTodo
       });
       todoListElement.appendChild(todoItemElement);
     });
